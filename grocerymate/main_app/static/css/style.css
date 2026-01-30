@@ -1,7 +1,5 @@
 /* Google Font */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
-
-/* CSS Variables for easy theming */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"); /* CSS Variables for easy theming */
 :root {
   --green-primary: #2e7d32;
   --green-light: #4caf50;
@@ -9,16 +7,12 @@
   --white: #ffffff;
   --gray-dark: #2c2c2c;
   --gray-light: #f6f6f6;
-}
-
-/* Reset */
+} /* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-/* Base styles */
+} /* Base styles */
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--gray-light);
@@ -26,23 +20,17 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-/* =====================
-    NAVBAR
-===================== */
+} /* ===================== NAVBAR ===================== */
 .navbar-fixed {
   position: sticky;
   top: 0;
   z-index: 100;
 }
-
 nav {
   background-color: var(--white);
   border-bottom: 1px solid #e0e0e0;
   padding: 0 2rem;
 }
-
 .nav-wrapper {
   max-width: 1200px;
   margin: auto;
@@ -50,9 +38,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between; /* logo left, links right */
-}
-
-/* Remove default ul styles */
+} /* Remove default ul styles */
 nav ul {
   list-style: none;
   display: flex;
@@ -60,147 +46,471 @@ nav ul {
   gap: 1.5rem;
   margin: 0;
   padding: 0;
-}
-
-/* Logo styling */
+} /* Logo styling */
 .logo {
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--green-primary);
   text-decoration: none;
 }
-
 .logo:hover {
   color: var(--green-light);
-}
-
-/* Nav links */
+} /* Nav links */
 nav a {
   text-decoration: none;
   color: var(--green-primary);
   font-weight: 600;
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
-
 nav a:hover {
   background-color: var(--green-soft);
   color: var(--green-light);
-}
-
-/* =====================
-    MAIN CONTENT
-===================== */
+} /* ===================== MAIN CONTENT ===================== */
 .container {
   flex: 1;
   max-width: 1200px;
   width: 100%;
   margin: 2.5rem auto;
   padding: 0 1.5rem;
-}
-
-/* Content card style */
+} /* Content card style */
 .container > * {
   background-color: var(--white);
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-}
-
-/* Headings */
-h1, h2, h3 {
+} /* Headings */
+h1,
+h2,
+h3 {
   color: var(--green-primary);
   margin-bottom: 1rem;
 }
-
 p {
   line-height: 1.6;
   color: #444;
-}
-
-/* =====================
-    FOOTER
-===================== */
+} /* ===================== FOOTER ===================== */
 .page-footer {
   background-color: var(--green-primary);
   color: var(--white);
   padding: 1rem 2rem;
 }
-
 .page-footer .right {
   max-width: 1200px;
   margin: auto;
   text-align: right;
   font-size: 0.9rem;
-}
-
-/* =====================
-    RESPONSIVE
-===================== */
+} /* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
   .nav-wrapper {
     flex-direction: column;
     gap: 0.75rem;
   }
-
   .page-footer .right {
     text-align: center;
   }
-
   .container {
     margin: 1.5rem auto;
   }
-}
-
-/* =====================
-   GROCERY CARDS
-===================== */
-
+} /* ===================== GROCERY CARDS ===================== */
 .page-title {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
-}
-
-/* Grid layout */
+} /* Grid layout */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
-}
-
-/* Card */
+} /* Card */
 .card {
   background-color: var(--white);
   border-radius: 14px;
   padding: 1.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   border-left: 6px solid var(--green-light);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
-
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
-}
-
-/* Card content */
+} /* Card content */
 .card-content {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-/* Grocery name */
+} /* Grocery name */
 .card-title {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--green-primary);
-}
-
-/* Brand */
+} /* Brand */
 .card-subtitle {
   font-size: 0.95rem;
   color: #666;
+} /* ===================== GROCERY DETAILS PAGE ===================== */
+.details-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.grocery-card {
+  display: flex;
+  gap: 2rem;
+  max-width: 900px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+} /* Image container */
+.grocery-image {
+  flex-shrink: 0;
+}
+.grocery-image img {
+  width: 180px; /* smaller = less pixelation */
+  height: 180px;
+  object-fit: contain; /* prevents stretching */
+  border-radius: 12px;
+  background-color: var(--gray-light);
+  padding: 1rem;
+} /* Info section */
+.grocery-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.grocery-title {
+  color: var(--green-primary);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.grocery-brand {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+} /* Action buttons */
+.card-actions {
+  display: flex;
+  gap: 1rem;
+}
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.btn-edit {
+  background-color: var(--green-soft);
+  color: var(--green-primary);
+}
+.btn-edit:hover {
+  background-color: var(--green-light);
+  color: var(--white);
+}
+.btn-delete {
+  background-color: #ffecec;
+  color: #c62828;
+}
+.btn-delete:hover {
+  background-color: #c62828;
+  color: var(--white);
+} /* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .grocery-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .grocery-image img {
+    margin: auto;
+  }
+  .card-actions {
+    justify-content: center;
+  }
+} /* ===================== ADD / EDIT GROCERY FORM ===================== */
+.form-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+.page-title {
+  color: var(--green-primary);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.form-card {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+} /* Django form fields */
+.form-fields p {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+.form-fields label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--green-primary);
+}
+.form-fields input,
+.form-fields select,
+.form-fields textarea {
+  padding: 0.7rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.form-fields input:focus,
+.form-fields select:focus,
+.form-fields textarea:focus {
+  outline: none;
+  border-color: var(--green-light);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+} /* File input */
+.form-fields input[type="file"] {
+  padding: 0.4rem;
+} /* Actions */
+.form-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-primary {
+  background-color: var(--green-primary);
+  color: var(--white);
+  padding: 0.7rem 1.6rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+.btn-primary:hover {
+  background-color: var(--green-light);
+  transform: translateY(-1px);
+} /* ===================== RESPONSIVE ===================== */
+@media (max-width: 600px) {
+  .form-card {
+    padding: 1.5rem;
+  }
+  .form-actions {
+    justify-content: center;
+  }
+} /* ===================== BIG CENTERED FORM PAGE ===================== */
+.form-page-wrapper {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} /* Header / intro */
+.form-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.form-hero h1 {
+  font-size: 2.4rem;
+  color: var(--green-primary);
+  margin-bottom: 0.5rem;
+}
+.form-hero p {
+  font-size: 1rem;
+  color: #666;
+} /* Main form card */
+.form-card-large {
+  width: 100%;
+  max-width: 760px;
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+} /* Grid layout for fields */
+.form-grid p {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.6rem;
+}
+.form-grid label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--green-primary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+} /* Inputs */
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+  transition: all 0.2s ease;
+}
+.form-grid textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.form-grid input:focus,
+.form-grid select:focus,
+.form-grid textarea:focus {
+  outline: none;
+  border-color: var(--green-light);
+  background-color: var(--white);
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
+} /* File input */
+.form-grid input[type="file"] {
+  padding: 0.6rem;
+  background-color: var(--white);
+} /* Submit button */
+.form-submit {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+.btn-submit {
+  background-color: var(--green-primary);
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.9rem 3rem;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.2s ease;
+}
+.btn-submit:hover {
+  background-color: var(--green-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(76, 175, 80, 0.35);
+} /* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .form-card-large {
+    padding: 2rem;
+  }
+  .form-hero h1 {
+    font-size: 2rem;
+  }
+}
+
+/* =====================
+   GROCERY IMAGES
+===================== */
+
+/* For My Groceries page cards */
+.card img,
+.card .card-content img,
+.grocery-card-img {
+  width: 100%;          /* fills card width */
+  max-width: 150px;     /* caps max width */
+  height: auto;         /* preserves aspect ratio */
+  object-fit: contain;  /* avoids stretching/cropping */
+  border-radius: 12px;
+  background-color: var(--gray-light);
+  padding: 0.5rem;
+  display: block;
+  margin: 0 auto;       /* centers in card */
+}
+
+/* Optional: make images responsive on small screens */
+@media (max-width: 768px) {
+  .card img,
+  .card .card-content img,
+  .grocery-card-img {
+    max-width: 120px;
+  }
+}
+
+/* =====================
+   DELETE CONFIRMATION PAGE
+===================== */
+
+.delete-page-wrapper {
+  min-height: calc(100vh - 140px); /* match form page style */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--gray-light);
+}
+
+.delete-card {
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 3rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.delete-card h1 {
+  color: var(--green-primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.delete-card p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.delete-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-delete {
+  background-color: #c62828;
+  color: var(--white);
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-delete:hover {
+  background-color: #b71c1c;
+  transform: translateY(-1px);
+}
+
+.btn-cancel {
+  background-color: var(--green-primary);
+  color: var(--white);
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-cancel:hover {
+  background-color: var(--green-light);
+  transform: translateY(-1px);
 }

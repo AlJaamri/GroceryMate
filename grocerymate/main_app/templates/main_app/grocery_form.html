@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="form-page-wrapper">
+
+  <div class="form-hero">
+    {% if object %}
+      <h1>Edit Grocery</h1>
+      <p>Update the details of your grocery item</p>
+    {% else %}
+      <h1>Add a New Grocery</h1>
+      <p>Fill in the details below to add a grocery item</p>
+    {% endif %}
+  </div>
+
+  <div class="form-card-large">
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <div class="form-grid">
+        {{ form.as_p }}
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="btn-submit">
+          {% if object %}Save Changes{% else %}Add Grocery{% endif %}
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}

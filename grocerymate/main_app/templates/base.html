@@ -16,8 +16,9 @@
           <li><a href="/" class="logo">GroceryMate</a></li>
         </ul>
         <ul class="right">
-          <li><a href="/guide">Guide</a></li>
-          <li><a href="/grocery">My Groceries</a></li>
+          <li><a href="{% url 'guide' %}">Guide</a></li>
+          <li><a href="{% url 'index' %}">My Groceries</a></li>
+          <li><a href="{% url 'groceries_create' %}">Add a Grocery</a></li>
         </ul>
       </div>
     </nav>

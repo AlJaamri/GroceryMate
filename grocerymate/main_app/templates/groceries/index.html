@@ -6,9 +6,13 @@
 <div class="card-grid">
   {% for grocery in groceries %}
     <div class="card">
+      <a href="/groceries/{{ grocery.id }}">
       <div class="card-content">
         <span class="card-title">{{ grocery.name }}</span>
         <p class="card-subtitle">{{ grocery.brand }}</p>
+        {% load static %}
+        <img src="{% static grocery.image|cut:'main_app/static/' %}" alt="" class="imgs">
+      </a>
       </div>
     </div>
   {% endfor %}
