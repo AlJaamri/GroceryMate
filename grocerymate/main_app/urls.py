@@ -9,4 +9,5 @@ urlpatterns = [
     path('groceries/create/', views.GroceryCreate.as_view(), name='groceries_create'),
     path('groceries/<int:pk>/update/', views.GroceryUpdate.as_view(), name='groceries_update'),
     path('groceries/<int:pk>/delete/', views.GroceryDelete.as_view(), name='groceries_delete'),
+    path('groceries/<int:grocery_id>/add_bought/', views.add_bought, name='add_bought')
 ]

@@ -21,15 +21,73 @@
       </p>
 
       <div class="card-actions">
-
-
         <a href="{% url 'groceries_update' grocery.id %}" class="btn btn-edit">Edit</a>
         <a href="{% url 'groceries_delete' grocery.id %}" class="btn btn-delete">Delete</a>
-
       </div>
     </div>
 
   </div>
+
+  <div class="bought-section">
+
+
+    <div class="calendar-scope">
+      <form action="{% url 'add_bought' grocery.id %}" method="post">
+        {% csrf_token %}
+        {{ bought_form.as_p }}
+        <input type="submit" value="Last Bought" class="btn">
+      </form>
+    </div>
+
+
+    {% if grocery.bought_set.count %}
+      <table class="striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for bought in grocery.bought_set.all %}
+            <tr>
+              <td>{{ bought.date }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+
+  </div>
 </div>
+
+<hr>
+<div class="row">
+  <div class="col s6">
+    <h3>{{ grocery.name }}'s Coupons</h3>
+    {% if grocery.coupons.count %}
+      {% for coupon in grocery.coupons.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+                {{ coupon.code }}
+            </span>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h5>No Coupons Added </h5>
+    {% endif %}
+  </div>
+
+</div>
+<script>
+  var dateEl = document.getElementById('id_date');
+  M.Datepicker.init(dateEl, {
+    format: 'yyyy-mm-dd',
+    defaultDate: new Date(),
+    setDefaultDate: true,
+    autoClose: true
+  });
+</script>
 
 {% endblock %}
