@@ -72,14 +72,42 @@
                 {{ coupon.code }}
             </span>
           </div>
+          <div class="card-action">
+            <form action="{% url 'unapply_coupon' grocery.id coupon.id %}" method="post">
+                {% csrf_token %}
+              <button type="submit" class="btn">UnApply</button>
+            </form>
+          </div>
         </div>
       {% endfor %}
     {% else %}
       <h5>No Coupons Added </h5>
     {% endif %}
   </div>
-
 </div>
+  </div>
+  <div class="col s6">
+    <h3>Available Coupons</h3>
+    {% if coupons.count %}
+      {% for coupon in coupons.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+                {{ coupon.code }}
+            </span>
+          </div>
+          <div class="card-action">
+            <form action="{% url 'apply_coupon' grocery.id coupon.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn">Apply</button>
+            </form>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h5>All Coupons available have been added.</h5>
+    {% endif %}
+  </div>
 <script>
   var dateEl = document.getElementById('id_date');
   M.Datepicker.init(dateEl, {

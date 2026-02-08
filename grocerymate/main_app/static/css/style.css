@@ -606,3 +606,314 @@ nav .right li a:hover {
   }
 }
 
+/* =====================
+   Coupons – Pages
+===================== */
+
+/* ---------- Add / Edit Coupon ---------- */
+.coupon-form-page {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.coupon-form-card {
+  width: 100%;
+  max-width: 760px;
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.coupon-form-grid table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.coupon-form-grid th {
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--green-primary);
+  padding-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.coupon-form-grid td {
+  padding-bottom: 1.4rem;
+}
+
+.coupon-form-grid input,
+.coupon-form-grid select,
+.coupon-form-grid textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+}
+
+.coupon-form-grid input:focus,
+.coupon-form-grid select:focus,
+.coupon-form-grid textarea:focus {
+  outline: none;
+  border-color: var(--green-light);
+  background-color: var(--white);
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
+}
+
+.coupon-form-submit {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.coupon-btn-submit {
+  background-color: var(--green-primary);
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.9rem 3rem;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.coupon-btn-submit:hover {
+  background-color: var(--green-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(76, 175, 80, 0.35);
+}
+
+/* ---------- Coupon List ---------- */
+.coupon-list-page {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.coupon-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.coupon-card {
+  background-color: var(--white);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border-left: 6px solid var(--green-light);
+  transition: all 0.2s ease;
+}
+
+.coupon-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.coupon-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green-primary);
+}
+
+/* ---------- Coupon Detail ---------- */
+.coupon-detail-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* centers vertically if needed */
+  margin-top: 2rem;
+  gap: 2rem; /* space between title and card */
+  text-align: center; /* center all text inside */
+}
+
+.coupon-detail-card {
+  max-width: 700px; /* increased from 600px */
+  width: 90%; /* more responsive */
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 3rem; /* larger padding */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center content inside */
+  gap: 1.5rem;
+}
+
+.coupon-detail-title {
+  font-size: 1.8rem; /* slightly bigger */
+  font-weight: 700;
+  color: var(--green-primary);
+  text-align: center;
+}
+
+.coupon-detail-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center; /* center buttons horizontally */
+  flex-wrap: wrap;
+}
+
+/* Base button look */
+.coupon-detail-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem; /* slightly bigger buttons */
+  border-radius: 12px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem; /* slightly larger text */
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  min-width: 120px; /* ensure buttons have width consistency */
+  text-align: center;
+}
+
+/* EDIT button (same as grocery edit) */
+.coupon-detail-actions a:first-child {
+  background-color: var(--green-soft);
+  color: var(--green-primary);
+}
+
+.coupon-detail-actions a:first-child:hover {
+  background-color: var(--green-light);
+  color: var(--white);
+}
+
+/* DELETE button (same as grocery delete) */
+.coupon-detail-actions a:last-child {
+  background-color: #ffecec;
+  color: #c62828;
+}
+
+.coupon-detail-actions a:last-child:hover {
+  background-color: #c62828;
+  color: var(--white);
+}
+
+/* Delete Confirmation Buttons */
+.delete-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center; /* center buttons horizontally */
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* DELETE button – red */
+.delete-buttons .btn-delete {
+  background-color: #c62828;
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.delete-buttons .btn-delete:hover {
+  background-color: #e53935;
+  transform: translateY(-1px);
+}
+
+/* Nevermind button – green */
+.delete-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--green-primary);
+  color: var(--white);
+  border-radius: 12px;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.delete-buttons a:hover {
+  background-color: var(--green-light);
+  transform: translateY(-1px);
+}
+
+/* =====================
+   Guide Page
+===================== */
+.guide-page-wrapper {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem;
+}
+
+.guide-hero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.guide-hero .page-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--green-primary);
+}
+
+.guide-content {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.guide-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--gray-dark);
+  text-align: justify;
+}
+
+/* Optional: highlight strong text */
+.guide-content p strong {
+  color: var(--green-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .guide-page-wrapper {
+    padding: 2rem 1rem;
+  }
+
+  .guide-hero .page-title {
+    font-size: 2rem;
+  }
+
+  .guide-content p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .guide-hero .page-title {
+    font-size: 1.8rem;
+  }
+
+  .guide-content p {
+    font-size: 0.9rem;
+  }
+}

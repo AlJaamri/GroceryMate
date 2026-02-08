@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="coupon-form-page">
+
+  {% if object %}
+    <h1>Edit {{ object.name }}</h1>
+  {% else %}
+    <h1>Add Coupon</h1>
+  {% endif %}
+
+  <div class="coupon-form-card">
+    <form action="" method="post">
+      {% csrf_token %}
+
+      <div class="coupon-form-grid">
+        {{ form.as_table }}
+      </div>
+
+      <div class="coupon-form-submit">
+        <input type="submit" value="Submit" class="coupon-btn-submit">
+      </div>
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}
