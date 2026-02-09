@@ -1132,3 +1132,43 @@ nav .right li a:hover {
 .auth-form p + p {
   margin-top: 1.2rem;
 }
+
+/* =====================
+   Navbar – Logout Button
+===================== */
+
+/* Remove default form spacing in navbar */
+nav .right li form {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style logout button like nav links */
+nav .right li form button {
+  background: none;
+  border: none;
+
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+
+  color: var(--green-primary);
+
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover state matches other nav items */
+nav .right li form button:hover {
+  background-color: var(--green-soft);
+  color: var(--green-light);
+}
+
+/* Remove weird focus outline from Materialize */
+nav .right li form button:focus {
+  outline: none;
+  background-color: var(--green-soft);
+}
