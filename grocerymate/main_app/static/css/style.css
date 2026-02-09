@@ -1173,3 +1173,131 @@ nav .right li form button:focus {
   background-color: var(--green-soft);
 }
 
+/* =====================
+   Home Page – Landing
+===================== */
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ---------- Hero ---------- */
+.home-hero {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.home-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--green-primary);
+  margin-bottom: 1rem;
+}
+
+.home-subtitle {
+  font-size: 1.15rem;
+  max-width: 720px;
+  margin: auto;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ---------- Sections ---------- */
+.home-section {
+  background-color: var(--white);
+  border-radius: 18px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+}
+
+.home-section p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.home-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Images ---------- */
+.home-image {
+  display: flex;
+  justify-content: center;
+}
+
+.home-image img {
+  width: 100%;
+  max-width: 850px;
+  height: 340px;
+
+  object-fit: cover;
+  border-radius: 20px;
+
+  background-color: var(--gray-light);
+  border: 1px solid #e5e5e5;
+
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.06);
+}
+
+/* Placeholder look before real images */
+.home-image img[src="#"] {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      var(--gray-light),
+      var(--gray-light) 12px,
+      #eeeeee 12px,
+      #eeeeee 24px
+    );
+}
+
+/* ---------- Subtle Section Rhythm ---------- */
+.home-page > * {
+  scroll-margin-top: 100px;
+}
+
+/* =====================
+   Responsive
+===================== */
+
+@media (max-width: 900px) {
+  .home-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .home-section {
+    padding: 2rem;
+  }
+
+  .home-image img {
+    height: 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-page {
+    gap: 2.5rem;
+  }
+
+  .home-hero h1 {
+    font-size: 2rem;
+  }
+
+  .home-subtitle {
+    font-size: 1rem;
+  }
+
+  .home-section p {
+    font-size: 0.95rem;
+  }
+
+  .home-image img {
+    height: 220px;
+  }
+}
