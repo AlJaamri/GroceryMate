@@ -1,14 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Sign Up</h1>
+<div class="auth-page-wrapper">
+  <div class="auth-card">
 
-{% if error_message %}<p class="red-text">{{ error_message }}</p>{% endif %}
+    <h1 class="auth-title">Sign Up</h1>
 
-<form method="post" action="{% url 'signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" class="btn" value="signup">
-</form>
+    {% if error_message %}
+      <p class="auth-error">{{ error_message }}</p>
+    {% endif %}
+
+    <form method="post" action="{% url 'signup' %}" class="auth-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" class="btn auth-btn" value="Sign Up">
+    </form>
+
+  </div>
+</div>
 
 {% endblock %}
