@@ -40,7 +40,10 @@ class GroceryCreate(CreateView):
     model = Grocery
     fields = ["name", "brand", "image"]
     success_url = "/groceries/"
-
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class GroceryUpdate(UpdateView):
     model = Grocery
