@@ -36,7 +36,7 @@ def groceries_detail(request, grocery_id):
     )
 
 
-class GroceryCreate(CreateView):
+class GroceryCreate(LoginRequiredMixin, CreateView):
     model = Grocery
     fields = ["name", "brand", "image"]
     success_url = "/groceries/"
@@ -45,12 +45,12 @@ class GroceryCreate(CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-class GroceryUpdate(UpdateView):
+class GroceryUpdate(LoginRequiredMixin, UpdateView):
     model = Grocery
     fields = "__all__"
 
 
-class GroceryDelete(DeleteView):
+class GroceryDelete(LoginRequiredMixin, DeleteView):
     model = Grocery
     success_url = "/groceries/"
 
@@ -75,25 +75,25 @@ def unapply_coupon(request, grocery_id, coupon_id):
     return redirect("detail", grocery_id=grocery_id)
 
 
-class CouponList(ListView):
+class CouponList(LoginRequiredMixin, ListView):
     model = Coupon
 
 
-class CouponDetail(DetailView):
+class CouponDetail(LoginRequiredMixin, DetailView):
     model = Coupon
 
 
-class CouponCreate(CreateView):
-    model = Coupon
-    fields = "__all__"
-
-
-class CouponUpdate(UpdateView):
+class CouponCreate(LoginRequiredMixin, CreateView):
     model = Coupon
     fields = "__all__"
 
 
-class CouponDelete(DeleteView):
+class CouponUpdate(LoginRequiredMixin, UpdateView):
+    model = Coupon
+    fields = "__all__"
+
+
+class CouponDelete(LoginRequiredMixin, DeleteView):
     model = Coupon
     success_url = "/coupons/"
 
