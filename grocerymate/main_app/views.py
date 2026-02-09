@@ -38,7 +38,7 @@ def groceries_detail(request, grocery_id):
 
 class GroceryCreate(CreateView):
     model = Grocery
-    fields = "__all__"
+    fields = ["name", "brand", "image"]
     success_url = "/groceries/"
 
 

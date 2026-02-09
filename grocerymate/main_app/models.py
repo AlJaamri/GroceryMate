@@ -18,6 +18,7 @@ class Grocery(models.Model):
     brand = models.CharField(max_length=100)
     image = models.ImageField(upload_to='main_app/static/uploads/', default='')
     coupons = models.ManyToManyField(Coupon)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
