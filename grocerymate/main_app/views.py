@@ -19,7 +19,7 @@ def guide(request):
 
 
 def groceries_index(request):
-    groceries = Grocery.objects.all()
+    groceries = Grocery.objects.filter(user=request.user)
     return render(request, "groceries/index.html", {"groceries": groceries})
 
 
