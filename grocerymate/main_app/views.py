@@ -80,8 +80,10 @@ def unapply_coupon(request, grocery_id, coupon_id):
     return redirect("detail", grocery_id=grocery_id)
 
 
-class CouponList(LoginRequiredMixin, ListView):
-    model = Coupon
+@login_required
+def coupons_index(request):
+    coupons = Coupon.objects.filter(user=request.user)
+    return render(request, "main_app/coupon_list.html", {"coupons": coupons})
 
 
 class CouponDetail(LoginRequiredMixin, DetailView):
@@ -90,12 +92,14 @@ class CouponDetail(LoginRequiredMixin, DetailView):
 
 class CouponCreate(LoginRequiredMixin, CreateView):
     model = Coupon
-    fields = "__all__"
-
+    fields = ["code"]
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class CouponUpdate(LoginRequiredMixin, UpdateView):
     model = Coupon
-    fields = "__all__"
+    fields = ["code"]
 
 
 class CouponDelete(LoginRequiredMixin, DeleteView):

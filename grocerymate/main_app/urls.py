@@ -13,7 +13,7 @@ urlpatterns = [
     path('groceries/<int:grocery_id>/apply_coupon/<int:coupon_id>/', views.apply_coupon, name='apply_coupon'),
     path('groceries/<int:grocery_id>/unapply_coupon/<int:coupon_id>/', views.unapply_coupon, name='unapply_coupon'),
 
-    path('coupons/', views.CouponList.as_view(), name='coupons_index'),
+    path('coupons/', views.coupons_index, name='coupons_index'),
     path('coupons/<int:pk>/', views.CouponDetail.as_view(), name='coupons_detail'),
     path('coupons/create/', views.CouponCreate.as_view(), name='coupons_create'),
     path('coupons/<int:pk>/update/', views.CouponUpdate.as_view(), name='coupons_update'),
