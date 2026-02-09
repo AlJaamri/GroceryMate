@@ -6,7 +6,7 @@
   <h1>Coupons</h1>
 
   <div class="coupon-card-grid">
-    {% for coupon in coupon_list %}
+    {% for coupon in coupons %}
       <a href="{% url 'coupons_detail' coupon.id %}">
         <div class="coupon-card">
           <div class="coupon-card-content">
