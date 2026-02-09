@@ -1027,3 +1027,60 @@ nav .right li a:hover {
     font-size: 1.9rem;
   }
 }
+
+/* =====================
+   Auth Button – HARD FIX
+===================== */
+
+/* Force button to behave like a real button */
+.auth-form input[type="submit"].auth-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 100%;
+  height: 52px;
+
+  padding: 0 !important;
+  margin: 2rem auto 0;
+
+  background-color: var(--green-primary) !important;
+  color: var(--white) !important;
+
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1;
+
+  border: none !important;
+  border-radius: 14px;
+
+  cursor: pointer;
+  box-shadow: none !important;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+/* Hover */
+.auth-form input[type="submit"].auth-btn:hover {
+  background-color: var(--green-light) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(76, 175, 80, 0.35);
+}
+
+/* Remove Materialize focus junk */
+.auth-form input[type="submit"].auth-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.2);
+}
+
+/* Make sure form content stays centered */
+.auth-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
