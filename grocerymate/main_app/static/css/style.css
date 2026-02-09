@@ -917,3 +917,113 @@ nav .right li a:hover {
     font-size: 0.9rem;
   }
 }
+
+/* =====================
+   Auth Pages (Login / Signup)
+===================== */
+
+.auth-page-wrapper {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 520px;
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.auth-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--green-primary);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Error message */
+.auth-error {
+  background-color: #ffecec;
+  color: #c62828;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Form layout */
+.auth-form p {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.4rem;
+}
+
+.auth-form label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--green-primary);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Inputs */
+.auth-form input[type="text"],
+.auth-form input[type="password"],
+.auth-form input[type="email"] {
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+  transition: all 0.2s ease;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--green-light);
+  background-color: var(--white);
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
+}
+
+/* Submit button */
+.auth-btn {
+  margin-top: 2rem;
+  width: 100%;
+  background-color: var(--green-primary);
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.9rem;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.auth-btn:hover {
+  background-color: var(--green-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(76, 175, 80, 0.35);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .auth-card {
+    padding: 2rem;
+  }
+
+  .auth-title {
+    font-size: 1.9rem;
+  }
+}
