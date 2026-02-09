@@ -21,11 +21,22 @@
           <li><a href="/" class="logo">GroceryMate</a></li>
         </ul>
         <ul class="right">
+          {% if user.is_authenticated %}
           <li><a href="{% url 'guide' %}">Guide</a></li>
           <li><a href="{% url 'index' %}">My Groceries</a></li>
           <li><a href="{% url 'groceries_create' %}">Add Groceries</a></li>
           <li><a href="{% url 'coupons_create' %}">Add Coupon</a></li>
           <li><a href="{% url 'coupons_index' %}">View Coupons</a></li>
+          <li>
+            <form method="post" action="{% url 'logout' %}">
+              {% csrf_token %}
+              <button type="submit">Logout</button>
+            </form>
+          </li>
+          {% else %}
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'signup' %}">Sign up</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
