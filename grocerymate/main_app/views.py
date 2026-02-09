@@ -17,10 +17,12 @@ def home(request):
 def guide(request):
     return render(request, "guide.html")
 
+
 @login_required
 def groceries_index(request):
     groceries = Grocery.objects.filter(user=request.user)
     return render(request, "groceries/index.html", {"groceries": groceries})
+
 
 @login_required
 def groceries_detail(request, grocery_id):
@@ -45,6 +47,7 @@ class GroceryCreate(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
+
 class GroceryUpdate(LoginRequiredMixin, UpdateView):
     model = Grocery
     fields = "__all__"
@@ -64,10 +67,12 @@ def add_bought(request, grocery_id):
         new_bought.save()
     return redirect("detail", grocery_id=grocery_id)
 
+
 @login_required
 def apply_coupon(request, grocery_id, coupon_id):
     Grocery.objects.get(id=grocery_id).coupons.add(coupon_id)
     return redirect("detail", grocery_id=grocery_id)
+
 
 @login_required
 def unapply_coupon(request, grocery_id, coupon_id):
@@ -97,7 +102,7 @@ class CouponDelete(LoginRequiredMixin, DeleteView):
     model = Coupon
     success_url = "/coupons/"
 
-@login_required
+
 def signup(request):
     error_message = ''
     if request.method == 'POST':
