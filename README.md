@@ -16,6 +16,8 @@ The application is built using Django and leverages its authentication system to
 https://trello.com/b/mLQicnwC/grocerymate
 
 # Technologies used
+* Visual Studio Code (VS Code) – Primary code editor used for development, debugging, and project organization with extensions supporting Python, Django, and version control
+
 * Python – Core programming language used for backend development
 
 * Django – Web framework used to handle routing, views, models, and authentication
