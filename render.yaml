@@ -11,10 +11,10 @@ services:
     runtime: python
     pythonVersion: 3.13
     buildCommand: |
-      pip install -r requirements.txt
-      python manage.py collectstatic --no-input
-      python manage.py migrate
-    startCommand: gunicorn grocerymate.asgi:application -k uvicorn.workers.UvicornWorker
+      pip install -r grocerymate/requirements.txt
+      python grocerymate/manage.py collectstatic --no-input
+      python grocerymate/manage.py migrate
+    startCommand: gunicorn grocerymate.grocerymate.asgi:application -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT --workers 2
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -23,6 +23,6 @@ services:
       - key: SECRET_KEY
         generateValue: true
       - key: WEB_CONCURRENCY
-        value: 4
+        value: 2
       - key: DJANGO_SETTINGS_MODULE
-        value: grocerymate.settings
+        value: grocerymate.grocerymate.settings
