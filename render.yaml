@@ -1,5 +1,5 @@
 databases:
-  - name: grocerymate
+  - name: grocerymatedb
     plan: free
     databaseName: grocerymate
     user: grocerymate
@@ -14,7 +14,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: grocerymate
+          name: grocerymatedb
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
