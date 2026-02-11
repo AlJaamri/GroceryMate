@@ -12,6 +12,8 @@ The application is built using Django and leverages its authentication system to
 
 # Wireframe
 ![Wireframe](public/images/Wireframe.png)
+# Deployed version
+https://grocerymate-tx81.onrender.com/
 # Trello
 https://trello.com/b/mLQicnwC/grocerymate
 
